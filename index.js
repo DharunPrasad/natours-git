@@ -13,7 +13,7 @@ const DB = process.env.DATABASE.replace(
 //Listening to the connected PORT
 //Connecting to the database
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
