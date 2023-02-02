@@ -11,8 +11,9 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 //Listening to the connected PORT
-const port = process.env.PORT
 //Connecting to the database
+
+const PORT = process.env.PORT
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
@@ -21,7 +22,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(port, () => {
+    app.listen(`0.0.0.0:${PORT}`, () => {
       console.log("Server is running on http://localhost:3000")
     });
   });
